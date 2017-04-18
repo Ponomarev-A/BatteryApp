@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BatteryApp</string>
+
+    <string name="battery_percent_format">%1$d%%</string>
+</resources>

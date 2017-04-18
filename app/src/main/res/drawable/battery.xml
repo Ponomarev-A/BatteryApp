@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <clip
+            android:clipOrientation="vertical"
+            android:gravity="bottom">
+            <shape android:shape="rectangle">
+                <gradient
+                    android:angle="90"
+                    android:endColor="@color/battery_fill"
+                    android:startColor="@color/battery_stroke" />
+                <corners
+                    android:bottomLeftRadius="@dimen/battery_corner_radius"
+                    android:bottomRightRadius="@dimen/battery_corner_radius"
+                    android:topLeftRadius="@dimen/battery_corner_radius"
+                    android:topRightRadius="@dimen/battery_corner_radius" />
+            </shape>
+        </clip>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="@dimen/battery_stroke"
+                android:color="@color/battery_stroke" />
+            <corners
+                android:bottomLeftRadius="@dimen/battery_corner_radius"
+                android:bottomRightRadius="@dimen/battery_corner_radius"
+                android:topLeftRadius="@dimen/battery_corner_radius"
+                android:topRightRadius="@dimen/battery_corner_radius" />
+        </shape>
+    </item>
+
+
+</layer-list>
