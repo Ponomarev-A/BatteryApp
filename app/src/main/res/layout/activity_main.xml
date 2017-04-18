@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/iv_battery"
-
+        android:textAppearance="@style/PercentAppearance"
         tools:text="100%" />
 
     <TextView
@@ -31,5 +31,14 @@
         android:layout_below="@id/tv_battery_percentage"
 
         tools:text="Li-ion" />
+
+    <TextView
+        android:id="@+id/tv_battery_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_battery_technology"
+
+        tools:text="Charging" />
 
 </RelativeLayout>

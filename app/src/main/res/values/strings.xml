@@ -2,4 +2,13 @@
     <string name="app_name">BatteryApp</string>
 
     <string name="battery_percent_format">%1$d%%</string>
+
+    <string-array name="battery_states">
+        <item>No battery</item>
+        <item>Unknown</item>
+        <item>Charging</item>
+        <item>Discharging</item>
+        <item>Not charging</item>
+        <item>Full</item>
+    </string-array>
 </resources>

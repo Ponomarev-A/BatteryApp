@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
     private ImageView mBatteryView;
     private TextView mBatteryPercentageView;
     private TextView mBatteryTechnology;
+    private TextView mBatteryStatus;
 
     private BroadcastReceiver mBatteryReceiver = new BroadcastReceiver() {
         @Override
@@ -28,6 +29,7 @@ public class MainActivity extends Activity {
             mBatteryView.getDrawable().setLevel(batteryPercentage * 100);
             mBatteryPercentageView.setText(getString(R.string.battery_percent_format, batteryPercentage));
             mBatteryTechnology.setText(technology);
+            mBatteryStatus.setText(getResources().getStringArray(R.array.battery_states)[getBatteryState(intent)]);
         }
     };
 
@@ -39,6 +41,7 @@ public class MainActivity extends Activity {
         mBatteryView = (ImageView) findViewById(R.id.iv_battery);
         mBatteryPercentageView = (TextView) findViewById(R.id.tv_battery_percentage);
         mBatteryTechnology = (TextView) findViewById(R.id.tv_battery_technology);
+        mBatteryStatus = (TextView) findViewById(R.id.tv_battery_status);
     }
 
     @Override
@@ -59,7 +62,19 @@ public class MainActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
 
+    private boolean isBatteryPresent(Intent intent) {
+        return intent.getBooleanExtra(BatteryManager.EXTRA_PRESENT, true);
+    }
 
+    private int getBatteryState(Intent intent) {
+        int state = 0;
+        if (isBatteryPresent(intent)) {
+            state = intent.getIntExtra(BatteryManager.EXTRA_STATUS,
+                    BatteryManager.BATTERY_STATUS_UNKNOWN);
+        }
+
+        return state;
     }
 }
