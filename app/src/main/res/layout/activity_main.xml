@@ -14,7 +14,7 @@
         android:layout_marginTop="@dimen/battery_margin"
         android:layout_marginBottom="@dimen/battery_margin"
 
-        android:textAlignment="center"/>
+        android:textAlignment="viewEnd" />
 
     <TextView
         android:id="@+id/tv_battery_percentage"
