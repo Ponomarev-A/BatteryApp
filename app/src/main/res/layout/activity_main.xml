@@ -12,7 +12,9 @@
         android:src="@drawable/battery"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/battery_margin"
-        android:layout_marginBottom="@dimen/battery_margin" />
+        android:layout_marginBottom="@dimen/battery_margin"
+
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/tv_battery_percentage"
